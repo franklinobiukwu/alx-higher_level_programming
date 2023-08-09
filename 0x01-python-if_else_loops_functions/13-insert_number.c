@@ -11,7 +11,7 @@
 
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *new_node, *current, *prev;
+	listint_t *new_node, *current = *head, *prev = *head;
 
 	new_node = malloc(sizeof(listint_t));
 	if (new_node == NULL)
@@ -29,8 +29,6 @@ listint_t *insert_node(listint_t **head, int number)
 	 * check through the sorted list for number is less than
 	 * the next node, but greater than or equal to previous node
 	 */
-	current = *head;
-	prev = *head;
 	while (current)
 	{
 		if (current->n < number)
@@ -48,10 +46,7 @@ listint_t *insert_node(listint_t **head, int number)
 			break;
 		}
 	}
-	/*
-	 * insert new node at the end of the list
-	 * if traversed to the end of the list
-	 */
+	 /* insert new node at the end of the list end of the list*/
 	if (current == NULL)
 		prev->next = new_node;
 	return (new_node);
