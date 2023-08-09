@@ -12,35 +12,21 @@
 
 int check_cycle(listint_t *list)
 {
-	listint_t *current = list;
-	listint_t *address_array[SIZE];
+	listint_t *slow = list;
+	listint_t *fast = list;
 	int found = 0;
-	int count = -1;
-	int i;
 
 
-	while (current)
+	while (fast != NULL && fast->next != NULL)
 	{
-		/*
-		 * check if current has been visited previously.
-		 * Set found to 1 and exit loop if previously visited
-		 */
-		for (i = 0; i <= count; i++)
-		{
-			if (address_array[i] == current)
-			{
-				found = 1;
-				break;
-			}
-		}
-		if (found == 1)
-			break;
+		slow = slow->next;
+		fast = fast->next->next;
 
-		/* store current address in array if not previously visited */
-		count++;
-		address_array[count] = current;
-		/* advance to next node */
-		current = current->next;
+		if (slow == fast)
+		{
+			found = 1;
+			break;
+		}
 	}
 
 	return (found);
