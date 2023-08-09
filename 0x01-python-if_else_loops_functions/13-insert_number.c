@@ -38,8 +38,8 @@ listint_t *insert_node(listint_t **head, int number)
 		}
 		else
 		{
-			if (prev == head)
-				head = new_node;
+			if (prev == *head)
+				*head = new_node;
 			else
 				prev->next = new_node;
 			new_node->next = current;
