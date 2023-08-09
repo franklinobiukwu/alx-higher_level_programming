@@ -30,6 +30,7 @@ listint_t *insert_node(listint_t **head, int number)
 	 * the next node, but greater than or equal to previous node
 	 */
 	current = *head;
+	prev = *head;
 	while (current)
 	{
 		if (current->n < number)
@@ -39,7 +40,10 @@ listint_t *insert_node(listint_t **head, int number)
 		}
 		else
 		{
-			prev->next = new_node;
+			if (prev == head)
+				head = new_node;
+			else
+				prev->next = new_node;
 			new_node->next = current;
 			break;
 		}
