@@ -17,5 +17,4 @@ if __name__ == "__main__":
     a = int(argv[1])
     b = int(argv[3])
 
-    #print(f"{a} {argv[2]} {b} = {operations[argv[2]](a, b)}")
     print("{} {} {} = {}".format(a, argv[2], b, operations[argv[2]](a, b)))
