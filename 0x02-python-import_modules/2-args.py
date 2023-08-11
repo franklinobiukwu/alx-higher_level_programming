@@ -3,9 +3,8 @@
 if __name__ == "__main__":
     from sys import argv
 
-
     if len(argv) == 1:
-        title = "argument."
+        title = "arguments."
     elif len(argv) > 2:
         title = "arguments:"
     else:
