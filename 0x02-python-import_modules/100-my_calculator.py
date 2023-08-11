@@ -15,10 +15,10 @@ if __name__ == "__main__":
     b = int(argv[3])
 
     if argv[2] == "+":
-        print(f"{a:d} {argv[2]} {b:d} = {add(a, b):d}")
+        print(f"{a} {argv[2]} {b} = {add(a, b):}")
     elif argv[2] == "-":
-        print(f"{a:d} {argv[2]} {b:d} = {sub(a, b):d}")
+        print(f"{a} {argv[2]} {b} = {sub(a, b):}")
     elif argv[2] == "*":
-        print(f"{a:d} {argv[2]} {b:d} = {mul(a, b):d}")
+        print(f"{a} {argv[2]} {b} = {mul(a, b):}")
     elif argv[2] == "/":
-        print(f"{a:d} {argv[2]} {b:d} = {div(a, b):d}")
+        print(f"{a} {argv[2]} {b} = {div(a, b):}")
