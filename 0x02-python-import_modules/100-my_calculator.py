@@ -6,12 +6,9 @@ if __name__ == "__main__":
 
     if len(argv) != 4:
         print(f"Usage: {argv[0]} <a> <operator> <b>")
-        print(len(argv))
         exit(1)
     if argv[2] not in ("+", "-", "*", "/"):
         print(f"Uknown operator. Available operators: +, -, * and /")
-        print(argv[2])
-        print(type(argv[2]))
         exit(1)
 
     a = int(argv[1])
