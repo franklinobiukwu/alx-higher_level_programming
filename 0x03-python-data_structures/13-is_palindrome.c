@@ -13,22 +13,36 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *current = *head;
-	int i = 0;
-	int arr[RANGE];
+	listint_t *current;
+	listint_t *next, *prev = NULL;
+	listint_t *slow = *head, *fast = *head;
 
-	while (current)
+
+	/* Treaverse to the middle of list */
+	while (fast)
 	{
-		arr[i] = current->n;
-		current = current->next;
-		i++;
+		slow = slow->next;
+		fast = fast->next->next;
 	}
-	current = *head;
+	/* Reverse the list from the middle */
+	current = slow;
 	while (current)
 	{
-		if (arr[i - 1] != current->n)
+		next = current->next;
+		current->next = prev;
+		prev = current;
+		current = next;
+	}
+	/* Compare both list */
+	while (prev)
+	{
+		if ((*head)->n == prev->n)
+		{
+			*head = (*head)->next;
+			prev = prev->next;
+		}
+		else
 			return (0);
-		i--;
 	}
 	return (1);
 }
