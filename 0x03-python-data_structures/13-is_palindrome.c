@@ -15,14 +15,26 @@ int is_palindrome(listint_t **head)
 {
 	listint_t *current;
 	listint_t *next, *prev = NULL;
-	listint_t *slow = *head, *fast = *head;
+	listint_t *slow = *head, *fast = *head, *h = *head;
 
+	if (*head == NULL || (*head)->next == NULL)
+		return (1);
 
 	/* Treaverse to the middle of list */
 	while (fast)
 	{
-		slow = slow->next;
 		fast = fast->next->next;
+		if (!fast)
+		{
+			slow = slow->next;
+			break;
+		}
+		if (!fast->next)
+		{
+			slow = slow->next->next;
+			break;
+		}
+		slow = slow->next;
 	}
 	/* Reverse the list from the middle */
 	current = slow;
@@ -36,9 +48,9 @@ int is_palindrome(listint_t **head)
 	/* Compare both list */
 	while (prev)
 	{
-		if ((*head)->n == prev->n)
+		if (h->n == prev->n)
 		{
-			*head = (*head)->next;
+			h = h->next;
 			prev = prev->next;
 		}
 		else
