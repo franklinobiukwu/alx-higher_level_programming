@@ -7,7 +7,6 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """Initialize instance of class with width attribute
-            
             Args:
                 width: represents the width of a rectangle
                 height: represents the height of a rectangle
