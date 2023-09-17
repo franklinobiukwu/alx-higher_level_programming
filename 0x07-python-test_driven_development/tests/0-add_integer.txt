@@ -28,13 +28,13 @@ Test case: Adding two negative integers
 	-2
 
 Test case: Adding a -ve integer and a charater
-	>>> add_integer(-1, 'a')
+	>>> add_integer(-1, a)
 	Traceback (most recent call last):
 		...
 	NameError: name 'a' is not defined
 
 Test case: Adding a character and a positive integer
-	>>> add_integer('b', 1)
+	>>> add_integer(b, 1)
 	Traceback (most recent call last):
 		...
 	NameError: name 'b' is not defined
@@ -86,10 +86,10 @@ Test case: Adding two NaN
 	ValueError: cannot convert float NaN to integer
 
 Test case: Adding a character
-	>>> add_integer('a')
+	>>> add_integer(a)
 	Traceback (most recent call last):
 		...
-	NameError: name 'a' is not defined
+	NameError: name a is not defined
 
 Test case: Calling blank function
 	>>> add_integer()
