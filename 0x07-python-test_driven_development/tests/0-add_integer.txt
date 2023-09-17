@@ -89,7 +89,7 @@ Test case: Adding a character
 	>>> add_integer(a)
 	Traceback (most recent call last):
 		...
-	NameError: name a is not defined
+	NameError: name 'a' is not defined
 
 Test case: Calling blank function
 	>>> add_integer()
