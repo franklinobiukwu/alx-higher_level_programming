@@ -91,6 +91,18 @@ Test case: Adding a character
 		...
 	NameError: name 'a' is not defined
 
+Test case: Calling blank function
+	>>> add_integer()
+	Traceback (most recent call last):
+		...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test case: Adding two characters
+	>>> add_integer("a", "z")
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
 Test case: Adding integer and empty list
 	>>> add_integer(10, [])
 	Traceback (most recent call last):
