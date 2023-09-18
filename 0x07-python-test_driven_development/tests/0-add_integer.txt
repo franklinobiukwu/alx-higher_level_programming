@@ -144,3 +144,7 @@ Test case: Adding None and integer
 	Traceback (most recent call last):
 		...
 	TypeError: a must be an integer
+
+Test case: Adding one argument
+	>>> add_integer(2)
+	100
