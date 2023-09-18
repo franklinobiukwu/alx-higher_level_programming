@@ -7,7 +7,6 @@ class Base:
         It manages the id attribution in all other classes in
         this projectand helps avoid code duplication.
     """
-    print("In Base!!")
     __nb_objects = 0
 
     def __init__(self, id=None):
