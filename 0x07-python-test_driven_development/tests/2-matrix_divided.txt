@@ -80,3 +80,39 @@ Divide 0 element 2 x 2 matrix by matrix
 	Traceback (most recent call last):
  		...
 	TypeError: div must be a number
+
+Call empty matrix_divided function
+	>>> matrix_divided()
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+Divide None by None
+	>>> matrix_divided(None, None)
+	Traceback (most recent call last):
+ 		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Divide nan by nan
+	>>> matrix_divided(nan, nan)
+	Traceback (most recent call last):
+ 		...
+	NameError: name 'nan' is not defined
+
+Divide irregular sized matrix by +ve integer
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6, 7]], 3)
+	Traceback (most recent call last):
+ 		...
+	TypeError: Each row of the matrix must have the same size
+
+Divide Float matrix by +ve integer
+	>>> matrix_divided([[1.1, 2.9, 3.4], [4.0, 5.3, 6.9]], 3)
+	[[0.37, 0.97, 1.13], [1.33, 1.77, 2.3]]
+
+Divide float matrix by infinity
+	>>> matrix_divided([[1.1, 2.9, 3.4], [4.0, 5.3, 6.9]], float('inf'))
+	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+Divide matrix by float
+	>>> matrix_divided([[1.1, 2.9, 3.4], [4.0, 5.3, 6.9]], 3.9)
+	[[0.28, 0.74, 0.87], [1.03, 1.36, 1.77]]
