@@ -1,0 +1,82 @@
+Test Cases for 2-matrix_divided module
+======================================
+
+Import module
+	>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+Declare a matrix
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+
+Divide Matrix by positive integer
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Divide matrix by negative integer
+	>>> matrix_divided(matrix, -1)
+	[[-1.0, -2.0, -3.0], [-4.0, -5.0, -6.0]]
+
+Divide matrix by 0
+	>>> matrix_divided(matrix, 0)
+	Traceback (most recent call last):
+ 		...
+	ZeroDivisionError: division by zero
+
+Divide matrix by character
+	>>> matrix_divided(matrix, "a")
+	Traceback (most recent call last):
+ 		...
+	TypeError: div must be a number
+
+Divide matrix by integer in bracket
+	>>> matrix_divided(matrix, (5))
+	[[0.2, 0.4, 0.6], [0.8, 1.0, 1.2]]
+
+Divide matrix by tuple of +ve integers
+	>>> matrix_divided(matrix, (5, 4))
+	Traceback (most recent call last):
+ 		...
+	TypeError: div must be a number
+
+Divide matrix by set of single +ve integer
+	>>> matrix_divided(matrix, {3})
+	Traceback (most recent call last):
+ 		...
+	TypeError: div must be a number
+
+Divide 0 by 3
+	>>> matrix_divided(0, 3)
+	Traceback (most recent call last):
+ 		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Divide two integers
+	>>> matrix_divided(5, 3)
+	Traceback (most recent call last):
+ 		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Divide list by +ve integer
+	>>> matrix_divided([5], 3)
+	Traceback (most recent call last):
+ 		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Divide list of two element by integer
+	>>> matrix_divided([5, 2], 3)
+	Traceback (most recent call last):
+		...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Divide 2 x 2 matrix by integer
+	>>> matrix_divided([[5, 2], [2, 5]], 3)
+	[[1.67, 0.67], [0.67, 1.67]]
+
+Divide 0 element 2 x 2 matrix by +ve integer
+	>>> matrix_divided([[0, 0], [0, 0]], 3)
+	[[0.0, 0.0], [0.0, 0.0]]
+
+Divide 0 element 2 x 2 matrix by matrix
+	>>> matrix_divided([[0, 0], [0, 0]], matrix)
+	Traceback (most recent call last):
+ 		...
+	TypeError: div must be a number
