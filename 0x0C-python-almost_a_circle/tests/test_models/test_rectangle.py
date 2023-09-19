@@ -128,3 +128,56 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.y, float('inf'))
 
     # TEST SET Y
+    def test_setY(self):
+        """Test set Y functionality"""
+        r = Rectangle(2, 1, 3, 4)
+        r.y = 0
+        self.assertEqual(r.y, 0)
+
+    def test_setY_none(self):
+        """Test set Y functionality"""
+        r = Rectangle(2, 1, 3, 4)
+        r.y = None
+        self.assertEqual(r.y, None)
+
+    def test_setY_inf(self):
+        """Test set Y functionality"""
+        r = Rectangle(2, 1, 3, 4)
+        r.y = float('inf')
+        self.assertEqual(r.y, float('inf'))
+
+    def test_setY_nve(self):
+        """Test set Y functionality"""
+        r = Rectangle(2, 1, 3, 4)
+        r.y = -2
+        self.assertEqual(r.y, -2)
+
+    def test_setY_str(self):
+        """Test set Y functionality"""
+        r = Rectangle(2, 1, 3, 4)
+        r.y = "str"
+        self.assertEqual(r.y, "str")
+
+    def test_setY_tup(self):
+        """Test set Y functionality"""
+        r = Rectangle(2, 1, 3, 4)
+        r.y = (0, 3)
+        self.assertEqual(r.y, (0, 3))
+
+    def test_setY_list(self):
+        """Test set Y functionality"""
+        r = Rectangle(2, 1, 3, 4)
+        r.y = [1, 3, "q"]
+        self.assertEqual(r.y, [1, 3, "q"])
+
+    def test_setY_dict(self):
+        """Test set Y functionality"""
+        r = Rectangle(2, 1, 3, 4)
+        r.y = {"name": "Frank", "age": 600}
+        self.assertEqual(r.y, {"name": "Frank", "age": 600})
+
+    def test_setY_set(self):
+        """Test set Y functionality"""
+        r = Rectangle(2, 1, 3, 4)
+        r.y = {"Frank", 600}
+        self.assertEqual(r.y, {"Frank", 600})
