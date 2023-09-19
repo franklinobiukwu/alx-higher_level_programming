@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 from models.base import Base
 
-"""Module for rectangle class: Defines attributes and 
+"""Module for rectangle class: Defines attributes and
     methods of a rectangle.
 """
 
@@ -20,22 +20,22 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """return Rectangle width"""
+        """return the value of Rectangle width"""
         return self.__width
 
     @width.setter
     def width(self, width):
-        """Set Rectangle width"""
+        """Set the value of Rectangle width"""
         self.__width = width
 
     @property
     def height(self):
-        """return Rectangle height"""
+        """return the value of Rectangle height"""
         return self.__height
 
     @height.setter
     def height(self, height):
-        """set Rectangle height"""
+        """set the value of Rectangle height"""
         self.__height = height
 
     @property
