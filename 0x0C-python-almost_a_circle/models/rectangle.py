@@ -7,7 +7,8 @@ from models.base import Base
 
 
 class Rectangle(Base):
-    """Rectangle class. Extends the Base class"""
+    """Rectangle class. Extends the Base class. Contains attributes
+        and methods for rectangle instances."""
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize instances of class"""

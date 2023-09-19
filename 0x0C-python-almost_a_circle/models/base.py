@@ -5,7 +5,7 @@
 class Base:
     """This is the base class for all classes in this project.
         It manages the id attribution in all other classes in
-        this projectand helps avoid code duplication.
+        this project and helps avoid code duplication.
     """
     __nb_objects = 0
 
