@@ -2,7 +2,9 @@
 import unittest
 from models.rectangle import Rectangle
 
-""" Test Module for Rectangle Class"""
+""" Test Module for Rectangle Class. Each method test for a functionality
+    or feature in the rectangle module
+"""
 
 
 class TestRectangle(unittest.TestCase):
