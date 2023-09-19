@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-from models.base import Base
 
 """Module for rectangle class: Defines attributes and
     methods of a rectangle.
 """
+
+from models.base import Base
 
 
 class Rectangle(Base):
