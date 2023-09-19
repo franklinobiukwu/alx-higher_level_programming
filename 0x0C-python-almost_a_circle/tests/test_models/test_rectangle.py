@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-import unittest
-from models.rectangle import Rectangle
-
 """ Test Module for Rectangle Class. Each method test for a functionality
     or feature in the rectangle module
 """
+
+
+import unittest
+from models.rectangle import Rectangle
+
 
 
 class TestRectangle(unittest.TestCase):
@@ -71,19 +73,6 @@ class TestRectangle(unittest.TestCase):
         r.height = "h"
         self.assertEqual(r.height, "h")
 
-    # TEST SET X
-    def test_setX(self):
-        """Test set x functionality"""
-        r = Rectangle(10, 5, 2.3)
-        self.assertEqual(r.x, 2.3)
-        r.x = 15
-        self.assertEqual(r.x, 15)
-        r.x = -4
-        self.assertEqual(r.x, -4)
-        r.x = float('inf')
-        self.assertEqual(r.x, float('inf'))
-        r.x = "x"
-        self.assertEqual(r.x, "x")
     # TEST GET X
     def test_getX(self):
         """Test get X functionality"""
@@ -103,5 +92,39 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.x, [3, "box"])
         r = Rectangle(20, 10, float('inf'))
         self.assertEqual(r.x, float('inf'))
+
+    # TEST SET X
+    def test_setX(self):
+        """Test set x functionality"""
+        r = Rectangle(10, 5, 2.3)
+        self.assertEqual(r.x, 2.3)
+        r.x = 15
+        self.assertEqual(r.x, 15)
+        r.x = -4
+        self.assertEqual(r.x, -4)
+        r.x = float('inf')
+        self.assertEqual(r.x, float('inf'))
+        r.x = "x"
+        self.assertEqual(r.x, "x")
+
     # TEST GET Y
+    def test_getY(self):
+        """Test get Y functionality"""
+        r = Rectangle(20, 10)
+        self.assertEqual(r.y, 0)
+        r = Rectangle(20, 10, 6, 4)
+        self.assertEqual(r.y, 4)
+        r = Rectangle(20, 10, -4, -3)
+        self.assertEqual(r.y, -3)
+        r = Rectangle(20, 10, "x", "y")
+        self.assertEqual(r.y, "y")
+        r = Rectangle(20, 10, 3, (2, "ram"))
+        self.assertEqual(r.y, (2, "ram"))
+        r = Rectangle(20, 10, {}, {2, -1})
+        self.assertEqual(r.y, {2, -1})
+        r = Rectangle(20, 10, [], [])
+        self.assertEqual(r.y, [])
+        r = Rectangle(20, 10, 20220202, float('inf'))
+        self.assertEqual(r.y, float('inf'))
+
     # TEST SET Y
