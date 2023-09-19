@@ -1,11 +1,14 @@
 #!/usr/bin/python3
 from models.base import Base
 
-"""Model for rectangle class"""
+"""Module for rectangle class: Defines attributes and 
+    methods of a rectangle.
+"""
 
 
 class Rectangle(Base):
     """Rectangle class. Extends the Base class"""
+
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initialize instances of class"""
         self.width = width
