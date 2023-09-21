@@ -13,171 +13,275 @@ class TestRectangle(unittest.TestCase):
     """Class to test the Rectangle class"""
 
     # TEST CLASS INSTANTIATION
-    def test_rec_blank(self):
-        """Instantiate rectangle without any value"""
-        self.assertRaises(TypeError, Rectangle)
+    def test_valid_instantiation(self):
+        """Test instantiation with valid values"""
+        rectangle = Rectangle(10, 20)
+        self.assertEqual(rectangle.width, 10)
+        self.assertEqual(rectangle.height, 20)
 
-    def test_rec_oneInt(self):
-        """Instantiate rectangle with one integer"""
-        self.assertRaises(TypeError, Rectangle, 20)
+    def test_invalid_instantiation(self):
+        """Test instantiation with invalid values"""
+        with self.assertRaises(TypeError):
+            rectangle = Rectangle()
 
-    def test_rec_oneStr(self):
-        """Instantiate rectangle with one string"""
-        self.assertRaises(TypeError, Rectangle, "hey")
+        with self.assertRaises(TypeError):
+            rectangle = Rectangle(10)
+
+        with self.assertRaises(ValueError):
+            rectangle = Rectangle(10, 0)
+
+        with self.assertRaises(ValueError):
+            rectangle = Rectangle(0, 20)
+
+        with self.assertRaises(TypeError):
+            rectangle = Rectangle("a", 20)
+
+        with self.assertRaises(TypeError):
+            rectangle = Rectangle(10, "a")
+
+        with self.assertRaises(ValueError):
+            rectangle = Rectangle(10, 20, -1)
+
+        with self.assertRaises(TypeError):
+            rectangle = Rectangle(10, 20, "a")
+
+        with self.assertRaises(ValueError):
+            rectangle = Rectangle(10, 20, 1, -2)
+
+        with self.assertRaises(TypeError):
+            rectangle = Rectangle(10, 20, 1, "a")
+        
 
     # TEST GET WIDTH
-    def test_rec_getW(self):
-        """Test get width functionality of rectangle class"""
-        r = Rectangle(20, 10)
-        self.assertEqual(r.width, 20)
+    def test_valid_get_width(self):
+        """Test get width functionality of
+            rectangle class with valid values
+        """
+        rectangle = Rectangle(20, 10)
+        self.assertEqual(rectangle.width, 20)
 
-    def test_rec_getW(self):
-        """Test get width functionality of rectangle class"""
-        r = Rectangle("w", "h")
-        self.assertEqual(r.width, "w")
+    def test_invalid_get_width(self):
+        """Test get width functionality of
+            rectangle class with invalid values
+        """
+        rectangle = Rectangle(20, 10)
+#       self.assertEqual(r.width, "w")
+        with self.assertRaises(TypeError):
+            rectangle.width()
 
     # TEST SET WIDTH
-    def test_rec_setW_int(self):
-        """Test set width functionality of rectangle class integer"""
-        r = Rectangle(20, 10)
-        r.width = 5
-        self.assertEqual(r.width, 5)
+    def test_valid_set_width(self):
+        """Test set width functionality of
+            rectangle class with valid values
+        """
+        rectangle = Rectangle(20, 10)
+        rectangle.width = 5
+        self.assertEqual(rectangle.width, 5)
+        rectangle.width = (5)
+        self.assertEqual(rectangle.width, 5)
 
-    def test_rec_setW_str(self):
+    def test_invalid_set_width(self):
         """Test get width functionality of rectangle class with string"""
-        r = Rectangle(20, 10)
-        r.width = "hey"
-        self.assertEqual(r.width, "hey")
+        rectangle = Rectangle(20, 10)
+        with self.assertRaises(TypeError):
+            rectangle.width = "a"
+
+        with self.assertRaises(ValueError):
+            rectangle.width = 0 
+
+        with self.assertRaises(ValueError):
+            rectangle.width = -1 
+
+        with self.assertRaises(TypeError):
+            rectangle.width = (5, 10)
+
+        with self.assertRaises(TypeError):
+            rectangle.width = {5, 10}
+
+        with self.assertRaises(TypeError):
+            rectangle.width = {"num1": 5, "num2": 10}
+
+        with self.assertRaises(TypeError):
+            rectangle.width = [5, 10]
+
+        with self.assertRaises(TypeError):
+            rectangle.width = None 
+
+        with self.assertRaises(TypeError):
+            rectangle.width = float('inf') 
 
     # TEST GET HEIGHT
-    def test_rec_getH(self):
+    def test_valid_get_height(self):
         """Test get height functionality of rectangle class"""
-        r = Rectangle(20, 10)
-        self.assertEqual(r.height, 10)
+        rectangle = Rectangle(20, 10)
+        self.assertEqual(rectangle.height, 10)
 
-    def test_rec_getW(self):
-        """Test get height functionality of rectangle class"""
-        r = Rectangle("w", "h")
-        self.assertEqual(r.height, "h")
+    def test_invalid_get_height(self):
+        """Test get width functionality of
+            rectangle class with invalid values
+        """
+        rectangle = Rectangle(20, 10)
+        with self.assertRaises(TypeError):
+            rectangle.height()
 
     # TEST SET HEIGHT
-    def test_rec_setH_int(self):
-        """Test set height functionality of rectangle class"""
-        r = Rectangle(20, 10)
-        r.height = 15
-        self.assertEqual(r.height, 15)
+    def test_valid_set_height(self):
+        """Test set height functionality of
+            rectangle class with valid values
+        """
+        rectangle = Rectangle(20, 10)
+        rectangle.height = 15
+        self.assertEqual(rectangle.height, 15)
 
-    def test_rec_setH_int(self):
-        """Test set height functionality of rectangle class"""
-        r = Rectangle(20, 10)
-        r.height = "h"
-        self.assertEqual(r.height, "h")
+    def test_invalid_set_height(self):
+        """Test set height functionality of
+            rectangle class with invalid values
+        """
+        rectangle = Rectangle(20, 10)
+        with self.assertRaises(TypeError):
+            rectangle.height = "a"
+
+        with self.assertRaises(ValueError):
+            rectangle.height = 0 
+
+        with self.assertRaises(ValueError):
+            rectangle.height = -1 
+
+        with self.assertRaises(TypeError):
+            rectangle.height = 1.5
+
+        with self.assertRaises(TypeError):
+            rectangle.height = (5, 10)
+
+        with self.assertRaises(TypeError):
+            rectangle.height = {5, 10}
+
+        with self.assertRaises(TypeError):
+            rectangle.height = {"num1": 5, "num2": 10}
+
+        with self.assertRaises(TypeError):
+            rectangle.height = [5, 10]
+
+        with self.assertRaises(TypeError):
+            rectangle.height = None 
+
+        with self.assertRaises(TypeError):
+            rectangle.height = float('inf') 
 
     # TEST GET X
-    def test_getX(self):
+    def test_valid_get_x(self):
         """Test get X functionality"""
-        r = Rectangle(20, 10)
-        self.assertEqual(r.x, 0)
-        r = Rectangle(20, 10, 6)
-        self.assertEqual(r.x, 6)
-        r = Rectangle(20, 10, -4)
-        self.assertEqual(r.x, -4)
-        r = Rectangle(20, 10, "x")
-        self.assertEqual(r.x, "x")
-        r = Rectangle(20, 10, (2, "ram"))
-        self.assertEqual(r.x, (2, "ram"))
-        r = Rectangle(20, 10, {2, -1})
-        self.assertEqual(r.x, {2, -1})
-        r = Rectangle(20, 10, [3, "box"])
-        self.assertEqual(r.x, [3, "box"])
-        r = Rectangle(20, 10, float('inf'))
-        self.assertEqual(r.x, float('inf'))
+        rectangle = Rectangle(20, 10)
+        self.assertEqual(rectangle.x, 0)
+        rectangle = Rectangle(20, 10, 6)
+        self.assertEqual(rectangle.x, 6)
+
+    def test_invalid_get_x(self):
+        """Test get x functionality"""
+        rectangle = Rectangle(20, 10)
+        with self.assertRaises(TypeError):
+            rectangle.x()
 
     # TEST SET X
-    def test_setX(self):
-        """Test set x functionality"""
-        r = Rectangle(10, 5, 2.3)
-        self.assertEqual(r.x, 2.3)
-        r.x = 15
-        self.assertEqual(r.x, 15)
-        r.x = -4
-        self.assertEqual(r.x, -4)
-        r.x = float('inf')
-        self.assertEqual(r.x, float('inf'))
-        r.x = "x"
-        self.assertEqual(r.x, "x")
+    def test_valid_set_x(self):
+        """Test set x functionality with valid values"""
+        rectangle = Rectangle(10, 5)
+        self.assertEqual(rectangle.x, 0)
+
+        rectangle.x = 15
+        self.assertEqual(rectangle.x, 15)
+
+        rectangle.x = 0
+        self.assertEqual(rectangle.x, 0)
+
+
+    def test_invalid_set_x(self):
+        """Test set x functionality with invalid values"""
+        
+        rectangle = Rectangle(20, 10)
+        with self.assertRaises(TypeError):
+            rectangle.x = "a"
+
+        with self.assertRaises(ValueError):
+            rectangle.x = -1 
+
+        with self.assertRaises(TypeError):
+            rectangle.x = 1.5
+
+        with self.assertRaises(TypeError):
+            rectangle.x = (5, 10)
+
+        with self.assertRaises(TypeError):
+            rectangle.x = {5, 10}
+
+        with self.assertRaises(TypeError):
+            rectangle.x = {"num1": 5, "num2": 10}
+
+        with self.assertRaises(TypeError):
+            rectangle.x = [5, 10]
+
+        with self.assertRaises(TypeError):
+            rectangle.x = None 
+
+        with self.assertRaises(TypeError):
+            rectangle.x = float('inf') 
+
 
     # TEST GET Y
-    def test_getY(self):
-        """Test get Y functionality"""
-        r = Rectangle(20, 10)
-        self.assertEqual(r.y, 0)
-        r = Rectangle(20, 10, 6, 4)
-        self.assertEqual(r.y, 4)
-        r = Rectangle(20, 10, -4, -3)
-        self.assertEqual(r.y, -3)
-        r = Rectangle(20, 10, "x", "y")
-        self.assertEqual(r.y, "y")
-        r = Rectangle(20, 10, 3, (2, "ram"))
-        self.assertEqual(r.y, (2, "ram"))
-        r = Rectangle(20, 10, {}, {2, -1})
-        self.assertEqual(r.y, {2, -1})
-        r = Rectangle(20, 10, [], [])
-        self.assertEqual(r.y, [])
-        r = Rectangle(20, 10, 20220202, float('inf'))
-        self.assertEqual(r.y, float('inf'))
+    def test_valid_get_y(self):
+        """Test get y functionality"""
+        rectangle = Rectangle(20, 10)
+        self.assertEqual(rectangle.y, 0)
+        rectangle = Rectangle(20, 10, 6, 6)
+        self.assertEqual(rectangle.y, 6)
+
+    def test_invalid_get_y(self):
+        """Test get y functionality"""
+        rectangle = Rectangle(20, 10)
+        with self.assertRaises(TypeError):
+            rectangle.y()
+
 
     # TEST SET Y
-    def test_setY(self):
-        """Test set Y functionality"""
-        r = Rectangle(2, 1, 3, 4)
-        r.y = 0
-        self.assertEqual(r.y, 0)
+    def test_valid_set_y(self):
+        """Test set y functionality with valid values"""
+        rectangle = Rectangle(10, 5)
+        self.assertEqual(rectangle.y, 0)
 
-    def test_setY_none(self):
-        """Test set Y functionality"""
-        r = Rectangle(2, 1, 3, 4)
-        r.y = None
-        self.assertEqual(r.y, None)
+        rectangle.y = 15
+        self.assertEqual(rectangle.y, 15)
 
-    def test_setY_inf(self):
-        """Test set Y functionality"""
-        r = Rectangle(2, 1, 3, 4)
-        r.y = float('inf')
-        self.assertEqual(r.y, float('inf'))
+        rectangle.y = 0
+        self.assertEqual(rectangle.y, 0)
 
-    def test_setY_nve(self):
-        """Test set Y functionality"""
-        r = Rectangle(2, 1, 3, 4)
-        r.y = -2
-        self.assertEqual(r.y, -2)
 
-    def test_setY_str(self):
-        """Test set Y functionality"""
-        r = Rectangle(2, 1, 3, 4)
-        r.y = "str"
-        self.assertEqual(r.y, "str")
+    def test_invalid_set_y(self):
+        """Test set y functionality with invalid values"""
+        
+        rectangle = Rectangle(20, 10)
+        with self.assertRaises(TypeError):
+            rectangle.y = "a"
 
-    def test_setY_tup(self):
-        """Test set Y functionality"""
-        r = Rectangle(2, 1, 3, 4)
-        r.y = (0, 3)
-        self.assertEqual(r.y, (0, 3))
+        with self.assertRaises(ValueError):
+            rectangle.y = -1 
 
-    def test_setY_list(self):
-        """Test set Y functionality"""
-        r = Rectangle(2, 1, 3, 4)
-        r.y = [1, 3, "q"]
-        self.assertEqual(r.y, [1, 3, "q"])
+        with self.assertRaises(TypeError):
+            rectangle.y = 1.5
 
-    def test_setY_dict(self):
-        """Test set Y functionality"""
-        r = Rectangle(2, 1, 3, 4)
-        r.y = {"name": "Frank", "age": 600}
-        self.assertEqual(r.y, {"name": "Frank", "age": 600})
+        with self.assertRaises(TypeError):
+            rectangle.y = (5, 10)
 
-    def test_setY_set(self):
-        """Test set Y functionality"""
-        r = Rectangle(2, 1, 3, 4)
-        r.y = {"Frank", 600}
-        self.assertEqual(r.y, {"Frank", 600})
+        with self.assertRaises(TypeError):
+            rectangle.y = {5, 10}
+
+        with self.assertRaises(TypeError):
+            rectangle.y = {"num1": 5, "num2": 10}
+
+        with self.assertRaises(TypeError):
+            rectangle.y = [5, 10]
+
+        with self.assertRaises(TypeError):
+            rectangle.y = None 
+
+        with self.assertRaises(TypeError):
+            rectangle.y = float('inf') 
