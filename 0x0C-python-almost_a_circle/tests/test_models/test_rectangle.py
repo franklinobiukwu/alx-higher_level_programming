@@ -285,3 +285,9 @@ class TestRectangle(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             rectangle.y = float('inf') 
+
+
+    # TEST FOR AREA
+    def test_area(self):
+        rectangle = Rectangle(20, 10)
+        self.assertEqual(rectangle.area(), 200)
