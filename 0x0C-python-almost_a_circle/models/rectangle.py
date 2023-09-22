@@ -128,3 +128,14 @@ class Rectangle(Base):
         except IndexError:
             for attr, value in kwargs.items():
                 self.__setattr__(attr, value)
+
+    def to_dictionary(self):
+        """returns a dictionary representation of a Rectangle"""
+        if (type(self).__name__ == "Square"):
+            class_dict =\
+                {"id": self.id, "size": self.height, "x": self.x, "y": self.y}
+        else:
+            class_dict =\
+                {"id": self.id, "width": self.width,
+                 "height": self.height, "x": self.x, "y": self.y}
+        return class_dict

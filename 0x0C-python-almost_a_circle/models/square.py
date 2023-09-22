@@ -19,3 +19,15 @@ class Square(Rectangle):
         """set square size"""
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """updates class attribute"""
+        try:
+            self.id = args[0]
+            self.width = args[1]
+            self.height = args[1]
+            self.x = args[2]
+            self.y = args[3]
+        except IndexError:
+            for attr, value in kwargs.items():
+                self.__setattr__(attr, value)
