@@ -106,8 +106,16 @@ class Rectangle(Base):
 
     def __str__(self):
         """override the __str__ method and return string below"""
-        return f"[{type(self).__name__}] ({self.id}) {self.__x}/{self.__y} - \
+        if (type(self).__name__ == "Square"):
+            str = \
+                f"[{type(self).__name__}] ({self.id}) {self.__x}/{self.__y} - \
+{self.__width}"
+        else:
+            str = \
+                f"[{type(self).__name__}] ({self.id}) {self.__x}/{self.__y} - \
 {self.__width}/{self.__height}"
+
+        return str
 
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
