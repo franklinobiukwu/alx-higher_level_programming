@@ -289,5 +289,17 @@ class TestRectangle(unittest.TestCase):
 
     # TEST FOR AREA
     def test_area(self):
+        """Test area functionality of Rectangle.
+            This should return the area of the Rectangle instance
+        """
         rectangle = Rectangle(20, 10)
         self.assertEqual(rectangle.area(), 200)
+
+    # TEST FOR DISPLAY
+    def test_display(self):
+        """Test for display method of the Rectangle instance.
+            This should print to stdout in character '#', the
+            instance of Rectangle.
+        """
+        rectangle = Rectangle(20, 10)
+        self.assertEqual(rectangle.display(), '\n'.join(['#' * rectangle.width for _ in range(rectangle.height)]))
