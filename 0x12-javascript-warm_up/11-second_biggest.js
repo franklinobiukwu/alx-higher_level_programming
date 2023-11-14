@@ -10,7 +10,7 @@
 if (process.argv.length < 3 || process.argv.length === 3) {
   console.log(0);
 } else {
-/* set the arguments in a new array */
+  /* set the arguments in a new array */
   const list = process.argv.slice(2);
 
   /* set initial maximum to be first argument */
