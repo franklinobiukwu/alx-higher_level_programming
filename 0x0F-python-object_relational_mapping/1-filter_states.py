@@ -21,7 +21,8 @@ def list_states(username, password, database):
         cursor = connection.cursor()
 
         # Select all states with name starting with uppercase N
-        cursor.execute("SELECT * FROM states WHERE states.name LIKE 'N%'")
+        cursor.execute("SELECT * FROM states WHERE states.name\
+                            LIKE 'N%' ORDER BY states.id ASC")
 
         # Fetch all selected data
         rows = cursor.fetchall()
