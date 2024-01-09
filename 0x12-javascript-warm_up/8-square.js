@@ -10,25 +10,22 @@
     * You must use a loop (while, for, etc.) */
 
 const args = process.argv.slice(2);
+const size = parseInt(args[0]);
 
-const square = [];
+let square = [];
 
 // print "Missing size" if args[0] can't be converted to integer
-if (isNaN(parseInt(args[0]))) {
+if (isNaN(parseInt(size))) {
   console.log('Missing size');
 } else {
-  const size = parseInt(args[0]);
   let i = 0;
 
   while (i < size) {
     for (let j = 0; j < size; j++) {
       square.push('x');
     }
-    if (i < size - 1) {
-      square.push('\n');
-    }
+    console.log(square.join(''));
+    square = [];
     i++;
   }
-
-  console.log(square.join(''));
 }
