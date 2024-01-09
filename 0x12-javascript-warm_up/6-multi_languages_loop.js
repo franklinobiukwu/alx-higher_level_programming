@@ -13,4 +13,7 @@
 
 const arr = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 
-arr.map(item => console.log(item));
+// print each element of array
+for(let i = 0; i < arr.length; i++) {
+    console.log(arr[i])
+}
