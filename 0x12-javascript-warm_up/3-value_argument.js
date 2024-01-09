@@ -6,9 +6,7 @@
     * You are not allowed to use var
     * You are not allowed to use length */
 
-const { argv } = require('node:process');
-
-const scriptArgs = argv;
+const scriptArgs = process.argv;
 
 const passedArgs = scriptArgs.slice(2);
 

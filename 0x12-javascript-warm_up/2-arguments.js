@@ -7,11 +7,8 @@
     *  You must use console.log(...) to print all output
     *  You are not allowed to use var */
 
-// import the process module
-const { argv } = require('node:process');
-
 // set the command-line argument array in variable
-const cmdArgArray = argv;
+const cmdArgArray = process.argv;
 
 /* extract the arguments excluding the first two elements
     * which are node and the script filename */
