@@ -5,5 +5,6 @@
     * You must use console.log(...) to print all output
     * You are not allowed to use var */
 
-console.log(`${process.argv[2]} is ${process.argv[3]}`);
+const passedArgument = process.argv.slice(2);
 
+console.log(`${passedArgument[0]} is ${passedArgument[1]}`);

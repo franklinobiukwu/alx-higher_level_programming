@@ -7,7 +7,7 @@
     *  You must use console.log(...) to print all output
     *  You are not allowed to use var */
 
-// set the command-line argument array in variable
+/* set the command-line argument array in variable */
 const cmdArgArray = process.argv;
 
 /* extract the arguments excluding the first two elements

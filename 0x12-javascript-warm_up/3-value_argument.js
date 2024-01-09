@@ -10,7 +10,7 @@ const scriptArgs = process.argv;
 
 const passedArgs = scriptArgs.slice(2);
 
-// print "No argument" if no arguments are passed to the script
+/* print "No argument" if no arguments are passed to the script */
 if (passedArgs[0] == null) {
   console.log('No argument');
 } else {
