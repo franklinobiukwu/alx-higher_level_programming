@@ -5,7 +5,7 @@
     *  If only one argument is passed to the script, print “Argument found”
     *  Otherwise, print “Arguments found”
     *  You must use console.log(...) to print all output
-    *  You are not allowed to use var */
+    *  You are not allowed to use  */
 
 /* set the command-line argument array in variable */
 const cmdArgArray = process.argv;
