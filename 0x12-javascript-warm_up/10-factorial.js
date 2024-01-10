@@ -7,7 +7,7 @@
     * You must do it recursively
     * You must use a function
     * You must use console.log(...) to print all output
-    * You are not allowed to use var */
+    * You are not allowed to use */
 
 // reursive function that computes factorial of a number
 const factorial = function (num) {
