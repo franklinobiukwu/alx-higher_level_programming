@@ -13,9 +13,19 @@ const args = process.argv.slice(2);
 if (args.length < 2) {
   console.log(0);
 } else {
-  let largest = parseInt(args[0]);
+  let largest;
   let secondLargest;
 
+  // set first integer as largest variable
+  for (let i = 0; i < args.length; i++) {
+    if (isNaN(parseInt(args[i]))) {
+      continue;
+    }
+    largest = parseInt(args[i]);
+    break;
+  }
+
+  // determine second largest integer in list of args
   for (let i = 0; i < args.length; i++) {
     if (parseInt(args[i]) > largest) {
       secondLargest = largest;
