@@ -6,7 +6,7 @@
     * If no argument passed, print 0
     * If the number of arguments is 1, print 0
     * You must use console.log(...) to print all output
-    * You are not allowed to use var */
+    * You are not allowed to use */
 
 const args = process.argv.slice(2);
 
