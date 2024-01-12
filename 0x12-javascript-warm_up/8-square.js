@@ -22,7 +22,7 @@ if (isNaN(parseInt(size))) {
 
   while (i < size) {
     for (let j = 0; j < size; j++) {
-      square.push('x');
+      square.push('X');
     }
     console.log(square.join(''));
     square = [];
