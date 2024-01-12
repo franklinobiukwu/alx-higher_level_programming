@@ -22,6 +22,7 @@ if (args.length < 2) {
       continue;
     }
     largest = parseInt(args[i]);
+    secondLargest = parseInt(args[i + 1]);
     break;
   }
 
@@ -30,6 +31,8 @@ if (args.length < 2) {
     if (parseInt(args[i]) > largest) {
       secondLargest = largest;
       largest = parseInt(args[i]);
+    } else if (parseInt(args[i + 1]) > secondLargest) {
+      secondLargest = parseInt(args[i + 1]);
     }
   }
 
