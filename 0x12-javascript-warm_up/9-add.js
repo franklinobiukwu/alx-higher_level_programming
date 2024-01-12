@@ -13,9 +13,7 @@ function add (a, b) {
 
 const args = process.argv.slice(2);
 
-if (args.length > 1) {
-  const a = parseInt(args[0]);
-  const b = parseInt(args[1]);
+const a = parseInt(args[0]);
+const b = parseInt(args[1]);
 
-  add(a, b);
-}
+add(a, b);
