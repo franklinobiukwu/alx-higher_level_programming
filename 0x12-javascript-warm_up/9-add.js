@@ -7,7 +7,7 @@
     * You must use console.log(...) to print all output
     * You are not allowed to use var */
 
-const addEm = function (a, b) {
+function add (a, b) {
     console.log(a + b)
 }
 
@@ -17,5 +17,5 @@ if (args.length > 1) {
     const a = parseInt(args[0])
     const b = parseInt(args[1])
 
-    addEm(a, b)
+    add(a, b)
 }
