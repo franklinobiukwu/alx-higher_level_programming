@@ -9,14 +9,10 @@ const myObject = {
 };
 console.log(myObject);
 
-function parentFunc () {
-  function incr () {
-    myObject.value = myObject.value + 1;
-  }
-  myObject.incr = incr;
+function incr () {
+  myObject.value = myObject.value + 1;
 }
-
-parentFunc();
+myObject.incr = incr;
 
 myObject.incr();
 console.log(myObject);
