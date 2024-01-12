@@ -8,19 +8,18 @@
 const fs = require('fs').promises;
 
 const joinScripts = async (file1, file2, destination) => {
-    try {
-        const fileOneData = await fs.readFile(file1, 'utf-8');
+  try {
+    const fileOneData = await fs.readFile(file1, 'utf-8');
 
-        const fileTwoData = await fs.readFile(file2, 'utf-8');
+    const fileTwoData = await fs.readFile(file2, 'utf-8');
 
-        const fileThreeData = String(fileOneData) + String(fileTwoData);
+    const fileThreeData = String(fileOneData) + String(fileTwoData);
 
-        await fs.writeFile(destination, fileThreeData);
-
-    } catch (error){
-        console.error('Error: ', error.message)
-    }
-}
+    await fs.writeFile(destination, fileThreeData);
+  } catch (error) {
+    console.error('Error: ', error.message);
+  }
+};
 
 const args = process.argv.slice(2);
 
