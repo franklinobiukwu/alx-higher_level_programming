@@ -9,10 +9,9 @@ const myObject = {
 };
 console.log(myObject);
 
-function incr () {
-  myObject.value = myObject.value + 1;
-}
-myObject.incr = incr;
+myObject.incr = function () {
+  return myObject.value++;
+};
 
 myObject.incr();
 console.log(myObject);
