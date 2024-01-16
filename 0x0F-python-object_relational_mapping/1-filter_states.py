@@ -22,7 +22,7 @@ def list_states(username, password, database):
 
         # Select all states with name starting with uppercase N
         cursor.execute("SELECT * FROM states WHERE name\
-                            LIKE 'N%' ORDER BY id ASC")
+                            LIKE BINARY 'N%' ORDER BY id ASC")
 
         # Fetch all selected data
         rows = cursor.fetchall()
@@ -32,7 +32,7 @@ def list_states(username, password, database):
             print(row)
 
     except MySQLdb.Error as e:
-        print("SQL error", e)
+        print(f"SQL error: {e}")
 
     finally:
         # Close cusor and connection
