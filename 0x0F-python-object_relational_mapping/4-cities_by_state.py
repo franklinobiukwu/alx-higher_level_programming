@@ -31,7 +31,8 @@ def list_cities(username, password, database):
     cursor = connection.cursor()
 
     # Query to select all cities
-    query = "SELECT cities.name AS cities_name, states.name AS state_name\
+    query = "SELECT cities.id AS cities_id,\
+            cities.name AS cities_name, states.name AS state_name\
             FROM cities\
             JOIN states ON cities.state_id=states.id"
 
