@@ -15,17 +15,17 @@ def display_states(username, password, database, searched):
 
     try:
         # Establish connection with MySQL server
-        connection = MySQLdb.connect(user=username, password=password,
+        connection = MySQLdb.connect(user=username, passwd=password,
                                      database=database, host=host, port=port)
         # Create cursor object
         cursor = connection.cursor()
 
         # Query to select searched term from state table
-        query = "SELECT * FROM states WHERE\
-                name = %s ORDER BY id ASC"
+        query = """SELECT * FROM states WHERE name =
+        '{:s}' ORDER BY id ASC""".format(searched)
 
         # Execute query
-        cursor.execute(query, (searched,))
+        cursor.execute(query)
 
         # Fetch all selected data
         states = cursor.fetchall()
