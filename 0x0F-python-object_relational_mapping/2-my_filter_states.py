@@ -21,8 +21,8 @@ def display_states(username, password, database, searched):
         cursor = connection.cursor()
 
         # Query to select searched term from state table
-        query = """SELECT * FROM states WHERE name =
-        '{:s}' ORDER BY id ASC""".format(searched)
+        query = """SELECT * FROM states WHERE name LIKE BINARY
+        '{}' ORDER BY id ASC""".format(searched)
 
         # Execute query
         cursor.execute(query)
