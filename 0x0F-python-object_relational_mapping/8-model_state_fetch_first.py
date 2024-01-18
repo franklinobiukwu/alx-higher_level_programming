@@ -34,8 +34,8 @@ def print_first_state(username, password, database):
     host = 'localhost'
     port = 3306
 
-    conn_str = f"mysql+mysqldb://{username}:\
-            {password}@{host}:{port}/{database}"
+    conn_str = "mysql+mysqldb://{}:{}@{}:{}/{}".format(
+            username, password, host, port, database)
 
     engine = create_engine(conn_str)
 
