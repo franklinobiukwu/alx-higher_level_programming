@@ -30,8 +30,9 @@ def list_states(username, password, database):
     host = 'localhost'
     port = 3306
 
-    engine = create_engine(f"mysql+mysqldb://{username}:\
-            {password}@{host}:{port}/{database}")
+    con_str = f"mysql+mysqldb://{username}:{password}@{host}:{port}/{database}"
+
+    engine = create_engine(con_str, pool_pre_ping=True)
 
     Session = sessionmaker(bind=engine)
 
@@ -40,7 +41,8 @@ def list_states(username, password, database):
     states = session.query(State).order_by(State.id).all()
 
     if states:
-        print([state[0] for state in states])
+        for state in states:
+            print(f"{state.id}: {state.name}")
 
     session.close()
 
